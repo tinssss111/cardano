@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation Example</title>
+    <style>
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loading {
+            width: 100px;
+            height: 100px;
+            background: url('/loading.gif') no-repeat center center;
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-container">
+        <div class="loading"></div>
+    </div>
+
+    <script>
+        // Simulate loading delay
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none';
+            document.querySelector('.loading-container').innerHTML += '<h1>Content Loaded!</h1>';
+        }, 3000);
+    </script>
+</body>
+
+</html>
