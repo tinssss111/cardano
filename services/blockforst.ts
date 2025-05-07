@@ -5,7 +5,7 @@ class BlockforstService {
 
     constructor() {
         this.baseUrl = "https://cardano-preprod.blockfrost.io/api/v0";
-        this.projectId = 'preprodKdtH4a7FVm5TDPfxWQBXqDquliI6mFlk';
+        this.projectId = 'preproduQs0kci5QeXLxPc6fVvzsiqOAr5Y6Osg';
     }
 
     async getAddressUtxos(address: string) {

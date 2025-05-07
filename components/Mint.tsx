@@ -2,7 +2,6 @@
 import { fromText } from "lucid-cardano";
 import React, { useState, useRef, ChangeEvent } from "react";
 import { useLucid } from "../context/LucidProvider";
-
 interface MintStatus {
   status: "idle" | "uploading" | "minting" | "success" | "error";
   message?: string;
@@ -19,7 +18,8 @@ export const Mint = () => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [txHash, setTxHash] = useState<string>("");
   const [status, setStatus] = useState<MintStatus>({ status: "idle" });
-
+  console.log("ssss", process.env.PINATA_API_KEY);
+  console.log(process.env.PINATA_API_SECRET);
   // Add supply/quantity state
   const [supply, setSupply] = useState<string>("1");
 
@@ -47,14 +47,16 @@ export const Mint = () => {
 
       // This is a sample API endpoint - replace with your actual IPFS service
       const ipfsEndpoint = "https://api.pinata.cloud/pinning/pinFileToIPFS";
+      const pinataApiKey = process.env.NEXT_PUBLIC_PINATA_API_KEY || "";
+      const pinataSecretApiKey =
+        process.env.NEXT_PUBLIC_PINATA_API_SECRET || "";
 
       // You'll need to add your API keys for authentication
       const response = await fetch(ipfsEndpoint, {
         method: "POST",
         headers: {
-          // Add your Pinata API keys or other IPFS service auth from environment variables
-          pinata_api_key: process.env.PINATA_API_KEY || "",
-          pinata_secret_api_key: process.env.PINATA_API_SECRET || "",
+          pinata_api_key: pinataApiKey || "",
+          pinata_secret_api_key: pinataSecretApiKey || "",
         },
         body: formData,
       });

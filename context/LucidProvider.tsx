@@ -49,7 +49,7 @@ export function LucidProvider({ children }: { children: ReactNode }) {
         const lucidInstance = await Lucid.new(
           new Blockfrost(
             "https://cardano-preprod.blockfrost.io/api/v0",
-            "preprodKdtH4a7FVm5TDPfxWQBXqDquliI6mFlk"
+            "preproduQs0kci5QeXLxPc6fVvzsiqOAr5Y6Osg"
           ),
           "Preprod"
         );
