@@ -55,8 +55,10 @@ export const Mint = () => {
       const response = await fetch(ipfsEndpoint, {
         method: "POST",
         headers: {
-          pinata_api_key: pinataApiKey || "",
-          pinata_secret_api_key: pinataSecretApiKey || "",
+          pinata_api_key: pinataApiKey || "2168651d3526e83ac2c4",
+          pinata_secret_api_key:
+            pinataSecretApiKey ||
+            "80989d3129cfc0363335194cb4b625a99eefb0d3658db642a0c7968862b6b67d",
         },
         body: formData,
       });
